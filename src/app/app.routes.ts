@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { CreditsComponent } from './components/credits/credits.component';
-import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 export const routes: Routes = [

@@ -1,0 +1,24 @@
+div {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+        text-decoration: none;
+        position: relative;
+        transition: transform 0.2s, text-shadow 0.2s;
+
+        &.router-link-active {
+            background-color: yellow;
+            color: #fff;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            text-shadow: 2px 2px 0 #ff0000, 4px 4px 0 #00ff00, 6px 6px 0 #0000ff;
+        }
+
+        &:visited {
+            color: black;
+        }
+    }
+}
