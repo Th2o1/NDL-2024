@@ -1,0 +1,44 @@
+div {
+    text-align: center;
+    margin: 20px;
+  }
+
+  
+  input {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .random-div {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 9999;
+    canvas.cookie {
+        width: 400%;
+        height: 400%;
+        image-rendering: pixelated;
+        background-image: url("../../../assets/cookies/cookie_16x16.png");
+        background-size: cover;
+        position: relative; 
+    }
+  }
+
+
+  

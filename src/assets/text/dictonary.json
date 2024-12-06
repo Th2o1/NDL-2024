@@ -1,0 +1,42 @@
+{
+    "kidneys": {
+        "name": "Les reins",
+        "corps": "Les reins filtrent les toxines et les déchets du sang, contribuant à maintenir l'équilibre chimique interne et l'élimination des substances indésirables.",
+        "ocean": "Les océans filtrent le carbone et d'autres substances organiques grâce à des processus biologiques, comme la pompe biologique marine, contribuant ainsi à la réduction des gaz à effet de serre dans l'atmosphère."
+    },
+    "eye": {
+        "name": "Les yeux",
+        "corps": "Les yeux sont des organes sensoriels qui permettent de voir et de percevoir la lumière. Ils sont composés de plusieurs parties différentes, dont la cornée, l'iris, la pupille, la rétine et le nerf optique.",
+        "ocean": "Les yeux de la mer sont des formations géologiques sous-marines qui ressemblent à des yeux. Ils sont souvent associés à des légendes et des mythes, et sont considérés comme des symboles de protection et de sagesse."
+    },
+    "hand": {
+        "name": "Adaptabilité et résilience",
+        "corps": "Le corps humain a une grande capacité d'adaptation (par exemple, la régulation thermique ou la réponse immunitaire), mais il peut aussi être submergé par des conditions extrêmes ou une exposition prolongée à des stress ",
+        "ocean": " L'océan est capable de s'adapter à des changements environnementaux, mais cette capacité de résilience est mise à rude épreuve par les pressions humaines et les changements climatiques rapides."
+    },
+    "hair": {
+        "name": "Menaces externes",
+        "corps": "Le corps humain réagit à des agressions externes, comme les infections, le stress, ou la pollution, par des réponses immunitaires, des adaptations physiologiques, ou des maladies lorsqu'il n'arrive plus à s'adapter.",
+        "ocean": "Les océans subissent de multiples pressions humaines, telles que la pollution, la surpêche, et le changement climatique, qui perturbent les écosystèmes marins et les processus comme la pompe biologique."
+    },
+    "bone": {
+        "name": "La peau",
+        "corps": "",
+        "ocean": "L'océan agit également comme une \"peau\" de la planète, en particulier en tant que barrière protectrice contre des changements climatiques extrêmes. Tout comme la peau humaine protège le corps des influences extérieures, l'océan protège la planète des effets du réchauffement climatique en absorbant la chaleur excédentaire et en régulant les conditions météorologiques. De plus, tout comme la peau réagit aux blessures, l'océan réagit aux pressions humaines comme la pollution et la surpêche, avec des effets visibles comme le blanchissement des coraux ou l’acidification des océans."
+    },
+    "stomach": {
+        "name": "L'estomac",
+        "corps": "",
+        "ocean": "De la même manière que le système digestif décompose les aliments pour extraire les nutriments, les océans ont la capacité de recycler les éléments et de transformer la matière organique. Les nutriments sont absorbés et distribués dans l'eau, contribuant à la vie marine, tout comme les nutriments sont extraits et distribués dans le corps humain pour nourrir les cellules."
+    },
+    "heart": {
+        "name": "Le coeur",
+        "corps": "Le système circulatoire, constitué du cœur et des vaisseaux sanguins, transporte le sang, les nutriments, et l'oxygène, régulant la température corporelle et maintenant l'équilibre des substances vitales",
+        "ocean": "L'océan joue un rôle dans la régulation du climat en absorbant et en distribuant de nouveau la chaleur et le carbone à travers ses courants marins, un peu comme un système circulatoire qui transporte des nutriments et de l'énergie."
+    },
+    "lungs": {
+        "name": "Les poumons",
+        "corps": "Les poumons permettent la respiration, en absorbant l'oxygène et en expulsant le dioxyde de carbone. Ils jouent un rôle essentiel dans le maintien de l'équilibre chimique du corps et la régulation des gaz à effet de serre.",
+        "ocean": "Tout comme les poumons humains qui régulent les niveaux d’oxygène et de dioxyde de carbone dans le sang, les océans jouent un rôle essentiel dans la régulation des gaz à effet de serre, en particulier le CO2. Les océans absorbent une grande partie du dioxyde de carbone produit par les activités humaines et stockent l'oxygène, contribuant ainsi à maintenir un équilibre dans l’atmosphère et à soutenir la vie sur Terre."
+    }
+}
