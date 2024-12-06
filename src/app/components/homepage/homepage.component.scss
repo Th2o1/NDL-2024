@@ -19,6 +19,11 @@ canvas{
     background-image: url("../../../assets/nuit_de_linfo.png");
     position: relative; 
 }
+.kidneys{
+    width: 50px;
+    height: 50px;
+    background-image: url("../../../assets/bodypart/kidney_16x16.png");
+}
 /* Le fond de la modale */
 .modal {
     position: fixed;
