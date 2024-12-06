@@ -1,22 +1,4 @@
-<div class="homepage-main">
-    <div class="homepage-top">
-        <app-nav-bar></app-nav-bar>
-        <div class="horizon_light">
-            <canvas class="horizon_light" *ngFor="let scale of scales" width="32" height="16"></canvas>
-        </div>
-        <div class="sun">
-            <canvas class="sun" width="16" height="16"></canvas>
-        </div>
-        <div class="horizon">
-            <canvas class="horizon" *ngFor="let scale of scales" width="32" height="16"></canvas>
-        </div>
-        <div class="vague_light_blue">
-            <canvas class="vague_light_blue" *ngFor="let scale of scales" width="32" height="16"></canvas>
-        </div>
-        <div class="vague_dark_blue">
-            <canvas class="vague_dark_blue" *ngFor="let scale of scales" width="32" height="16"></canvas>
-        </div>
-    </div>
+    <app-background></app-background>
     <div class="homepage-rest">
         <div class="modal-main-container">
             <button (click)="openModal()">Ouvrir la modale</button>
@@ -32,6 +14,5 @@
             <div class="content"><canvas  class="kidneys" width="16" height="16"></canvas></div>
         </div>
     </div>
-</div>
     
 
