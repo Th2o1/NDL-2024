@@ -55,7 +55,21 @@ div.homepage-rest {
     background-size: cover;
     width: 100px;
     height: 100px;
-    background-image: url("../../../assets/bodypart/stomach_16x16.png")
+    background-image: url("../../../assets/bodypart/stomach_16x16.png");
+}
+.heart{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    background-image: url("../../../assets/bodypart/Heart_16x16.png");
+}
+.lungs{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/Lungs_16x16.png");
 }
 
 
