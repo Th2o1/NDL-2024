@@ -11,6 +11,7 @@ import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component"
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
+  scales = [1, 2, 3, 4, 5];
  
 
   isModalOpen: boolean = false; 

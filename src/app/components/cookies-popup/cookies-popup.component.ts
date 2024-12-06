@@ -54,4 +54,9 @@ export class CookiesPopupComponent {
     this.showRandomBucket = true; // Show the div after it gets a position
   }
 
+  close() {
+    this.showCookies = false;
+    this.showRandomBucket = false;
+  }
+
 }

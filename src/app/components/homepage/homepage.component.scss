@@ -1,13 +1,101 @@
-.main {
-    width: 100%;
+div.homepage-main {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    
+    div.homepage-top {
+        height: 100%;
+        background-color: #92e4f2;
+        z-index: 1;
+        app-nav-bar {
+            display: block;
+            position: absolute;
+            margin: 1.5rem;
+            right: 0;
+            z-index: 1; /* Add this line */
+        }
+        div.sun {
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -28rem;
+            canvas.sun {
+                width: 50%;
+                height: 50%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/sun_64x64.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.vague_dark_blue {
+            display: flex;
+            margin-top: -8rem;
+            canvas.vague_dark_blue {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/vague_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.vague_light_blue {
+            display: flex;
+            margin-top: -8rem;
+            canvas.vague_light_blue {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/vague_lighten_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }        
+        div.horizon {
+            display: flex;
+            margin-top: -30rem;
+            canvas.horizon {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/horizon_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.horizon_light {
+            display: flex;
+            background-image: #1860C3;
+            margin-top: 20rem;
+            canvas.horizon_light {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/horizon_lighten_32x16.png");
+                background-size: cover;
+                // transform: rotate(180deg);
+                position: relative; 
+            }
+        }
+    }
+    div.homepage-rest {
+        z-index: 6;
+        background-color: #1860C3;
+        width: 100%;
+        height: 100%;
+    }
   
 }
+
+
 .content{
     width: 100%;
     height: 10000px;
     background: linear-gradient(to bottom, #1860C3, #124c9c, #0c3875, #08254e, #041226);
 }
+
 canvas{
     image-rendering: pixelated;
     background-size: cover;
@@ -24,6 +112,10 @@ canvas{
     height: 50px;
     background-image: url("../../../assets/bodypart/kidney_16x16.png");
 }
+
+
+
+
 /* Le fond de la modale */
 .modal {
     position: fixed;
@@ -57,10 +149,3 @@ canvas{
     font-size: 24px;
     cursor: pointer;
   }
-app-nav-bar {
-    display: block;
-    position: absolute;
-    margin: 1.5rem;
-    right: 0;
-    z-index: 1; /* Add this line */
-}
