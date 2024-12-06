@@ -17,7 +17,24 @@ interface IDictionary {
 })
 
 export class HomepageComponent {
-  
+  ngAfterViewInit(): void {
+    this.positionCanvasesRandomly();  
+  }
+
+  // Fonction pour positionner les canvas de manière aléatoire
+  positionCanvasesRandomly(): void {
+    const canvases = document.querySelectorAll('.canvas') as NodeListOf<HTMLElement>;
+    const contentWidth = document.querySelector('.content')?.clientWidth || 0;
+    const contentHeight = document.querySelector('.content')?.clientHeight || 0;
+    console.log(canvases);
+    canvases.forEach(canvas => {
+      const randomX = Math.random() * (contentWidth - canvas.clientWidth);
+      const randomY = Math.random() * (contentHeight - canvas.clientHeight);
+
+      canvas.style.left = `${randomX}px`;
+      canvas.style.top = `${randomY}px`;
+    });
+  }
 
 
   isModalOpen: boolean = false; 
