@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
-import * as dictionary from './dictionary.json';
+import * as dictionary from '../../../assets/text/dictonary.json';
 import { BackgroundComponent } from "../background/background.component";
 
 @Component({
