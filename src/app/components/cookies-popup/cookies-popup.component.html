@@ -20,7 +20,7 @@
             <input
                 type="text"
                 [(ngModel)]="userInput"
-                placeholder="Type 'I agree to sell my soul to the lord of the underworld'"
+                placeholder="Type 'I agree to sell my soul to Cthulhu'"
             />
             <button (click)="submitAgreement()">Submit</button>
         </div>
@@ -30,5 +30,5 @@
 
     </div>
 </div>
-<div *ngIf="showRandomBucket" (click)="close()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
-'left': randomDivPosition.y + 'px'}">Bucket</div>
+<div *ngIf="showRandomBucket" (click)="moveRandomDiv()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
+'left': randomDivPosition.x + 'px'}"><img src="" alt=""></div>
