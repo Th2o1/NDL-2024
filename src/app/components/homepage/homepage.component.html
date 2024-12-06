@@ -1,6 +1,23 @@
-<div class="main">
-    <app-nav-bar></app-nav-bar>
-    <canvas width="128" height="128"></canvas>
-    <div class="main">CECI est un test</div>
+<div class="homepage-main">
+    <div class="homepage-top">
+        <app-nav-bar></app-nav-bar>
+        <div class="horizon_light">
+            <canvas class="horizon_light" *ngFor="let scale of scales" width="32" height="16"></canvas>
+        </div>
+        <div class="sun">
+            <canvas class="sun" width="16" height="16"></canvas>
+        </div>
+        <div class="horizon">
+            <canvas class="horizon" *ngFor="let scale of scales" width="32" height="16"></canvas>
+        </div>
+        <div class="vague_light_blue">
+            <canvas class="vague_light_blue" *ngFor="let scale of scales" width="32" height="16"></canvas>
+        </div>
+        <div class="vague_dark_blue">
+            <canvas class="vague_dark_blue" *ngFor="let scale of scales" width="32" height="16"></canvas>
+        </div>
+    </div>
+    <div class="homepage-rest">
+    </div>
+    
 </div>
-
