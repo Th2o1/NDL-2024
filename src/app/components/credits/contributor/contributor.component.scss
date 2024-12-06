@@ -1,38 +1,47 @@
+.hover-wrapper {
+  display: inline-block;
+  text-align: center; /* Ensures the name aligns with the canvas */
+}
+
+.name {
+  margin: 0;
+  font-size: 0.8rem; /* Adjust font size for clarity */
+  text-align: center;
+  color: black; /* Set text color to be visible */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-overflow: unset; /* Disable truncation */
+  margin-top: 4px; /* Add space between canvas and name */
+}
+
 .hover-container {
   position: relative;
-  width: 200%; // Adjust as needed
-  height: 200%; // Adjust as needed
-  overflow: hidden;
+  width: 64px; /* Adjust as needed */
+  height: 64px; /* Adjust as needed */
+  overflow: visible;
+}
 
-  canvas {
-    width: 100%;
-    height: 100%;
-    image-rendering: pixelated;
-    background: url("../../../../assets/credits/pufferfish_yellow_1_64x64.png") center repeat-x;
-    background-size: auto 100%;
-  }
+.pufferfish {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  background-size: auto 100%;
+}
 
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); // Semi-transparent black
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-    p {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-  }
-
-  &:hover .overlay {
-    opacity: 1;
-  }
+.hover-container:hover .overlay {
+  opacity: 1;
 }

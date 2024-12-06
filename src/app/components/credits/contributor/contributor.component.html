@@ -1,6 +1,16 @@
-<div class="hover-container">
-    <div class="overlay">
-        <p>Overlay Text Here</p>
+<div *ngFor="let person of people; let i = index" class="hover-wrapper">
+    <div class="hover-container"
+         (mouseenter)="setHoverState(i, true)"
+         (mouseleave)="setHoverState(i, false)">
+        <canvas
+                id="contributor-{{ i }}"
+                [style.background]="getPufferfishImage(i)"
+                class="pufferfish"
+        ></canvas>
+
+        <div class="overlay">
+            <p>{{ person }}</p>
+        </div>
     </div>
-    <canvas id="contributor" width="64" height="64"></canvas>
+    <p class="name">{{ person }}</p>
 </div>
