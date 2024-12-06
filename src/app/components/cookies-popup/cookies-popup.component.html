@@ -30,5 +30,5 @@
 
     </div>
 </div>
-<div *ngIf="showRandomBucket" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
-'left': randomDivPosition.y + 'px'}">Bam</div>
+<div *ngIf="showRandomBucket" (click)="close()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
+'left': randomDivPosition.y + 'px'}">Bucket</div>
