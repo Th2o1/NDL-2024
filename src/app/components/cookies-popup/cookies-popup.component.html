@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="showCookies">
     <div>
         Bienvenue sur notre site, un groupe d'étudiants prêts à relever des défis qui respectent votre vie privée !
         <br><br>
@@ -13,7 +13,22 @@
         C'est juste pour ne pas vous embêter avec des pop-ups à chaque fois que vous venez sur notre site.
     </div>
     <div>
-        <div><a href="#">Manger le cookie :)</a></div>
-        <div><a href="#">Jeter le cookie :(</a></div>
+        <div><a href="#" (click)="acceptCookie()">Manger le cookie :)</a></div>
+        
+        <!-- Input field and submit button -->
+        <div *ngIf="showInput">
+            <input
+                type="text"
+                [(ngModel)]="userInput"
+                placeholder="Type 'I agree to sell my soul to the lord of the underworld'"
+            />
+            <button (click)="submitAgreement()">Submit</button>
+        </div>
+
+        <div><a href="#" (click)="rejectCookie()">Jeter le cookie :(</a></div>
+        <div *ngIf="showMsg">If you want to reject you have to click on the bucket</div>
+
     </div>
 </div>
+<div *ngIf="showRandomBucket" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
+'left': randomDivPosition.y + 'px'}">Bam</div>
