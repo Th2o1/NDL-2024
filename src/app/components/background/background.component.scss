@@ -52,7 +52,20 @@ div.homepage-main {
                 background-size: cover;
                 position: relative; 
             }
-        }        
+        }
+        div.human{
+            display: flex;
+            margin-top: -7.5rem;
+            position:absolute;
+            canvas.human {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/Run/jumpman_run_32x32_1.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }      
         div.horizon {
             display: flex;
             margin-top: -27rem;
@@ -100,6 +113,39 @@ div.homepage-main {
         background-color: #1860C3;
         width: 100%;
         height: 100%;
+    }
+}
+$step-size: 15px; // Distance moved in each keyframe
+$step-size-2: 15px;
+$frames: 10;
+$frames_l:12;
+$frames_f:5; 
+.human{
+    width:100px;
+    height: 100px;
+    position: absolute;
+    top: 75%;
+    animation:run 2.5s linear 1 forwards;
+    transform-origin: center;
+}
+@keyframes run{
+    @for $i from 1 through $frames {
+        #{($i * 3.7%)} {
+            content: url("../../../assets/Run/jumpman_run_32x32_#{$i}.png");
+            transform: translateX(#{$i * $step-size});
+        }
+    }
+    @for $i from 1 through $frames_l {
+        #{($i * 3.7%+33.7%)} {
+            content: url("../../../assets/Look_down/jumpman_look_down_32x32_#{$i}.png");
+            transform: translateX(#{$i * $step-size+100px});
+        }
+    }
+    @for $i from 1 through $frames_f{
+        #{($i * 3.7%+81.4%)} {
+            content: url("../../../assets/Fall/jumpman_fall_32x32_#{$i}.png");
+            transform: translate3D(#{$i * $step-size+220px,$i*$step-size-2,0});
+        }
     }
 }
 
