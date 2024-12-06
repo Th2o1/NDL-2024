@@ -6,8 +6,9 @@
             <div *ngIf="isModalOpen" class="modal" [ngStyle]="modalStyles" (click)="closeModalOnBackgroundClick($event)">
               <div class="modal-content">
                 <span class="close" (click)="closeModal()">×</span>
-                <h2>Bienvenue dans la modale</h2>
-                <p>Ceci est un exemple de fenêtre modale.</p>
+                <h2>{{ modal_title }}</h2>
+                <p>{{ modal_content_human }}</p>
+                <p>{{ modal_content_ocean }}</p>
               </div>
             </div>
             <div class="content">
@@ -17,6 +18,8 @@
                 <canvas (click)="openModal('hair')"  class="hair" width="32" height="32"></canvas>
                 <canvas (click)="openModal('bone')"  class="bone" width="16" height="16"></canvas>
                 <canvas (click)="openModal('stomach')"  class="stomach" width="16" height="16"></canvas>
+                <canvas (click)="openModal('lungs')"  class="lungs" width="16" height="16"></canvas>
+                <canvas (click)="openModal('heart')"  class="heart" width="16" height="16"></canvas>
             </div>
         </div>
     </div>
