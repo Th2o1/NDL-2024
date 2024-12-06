@@ -6,6 +6,7 @@ import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component"
   selector: 'app-homepage',
   imports: [NavBarComponent, CookiesPopupComponent],
   templateUrl: './homepage.component.html',
+  standalone: true,
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
