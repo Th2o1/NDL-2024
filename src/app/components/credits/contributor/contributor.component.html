@@ -8,7 +8,17 @@
                 id="contributor-{{ i }}"
                 [style.background-image]="getPufferfishImage(i)"
                 class="pufferfish"
+                (click)="openModal(person.name)"
         ></canvas>
     </div>
     <p class="name">{{ person.name }}</p>
+</div>
+
+<!-- Modal Window -->
+<div *ngIf="isModalOpen" class="modal" (click)="closeModalOnBackgroundClick($event)">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">×</span>
+        <h2>{{ selectedPerson }}</h2>
+        <p>Vous avez sélectionné {{ selectedPerson }}!</p>
+    </div>
 </div>

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf, NgOptimizedImage, NgStyle } from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-contributor',
   imports: [
     NgOptimizedImage,
     NgForOf,
-    NgStyle
+    NgStyle,
+    NgIf
   ],
   templateUrl: './contributor.component.html',
   standalone: true,
@@ -19,6 +20,24 @@ export class ContributorComponent implements OnInit {
   hoverIntervals: any[] = []; // To store interval IDs for each item
   currentHoverFrame: number[] = []; // To track the current frame for each hover
   hoverPositions: { top: string, left: string }[] = []; // To store positions for each hover-wrapper
+  isModalOpen = false;
+  selectedPerson: string | null = null;
+
+  openModal(person: string): void {
+    this.selectedPerson = person;
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.selectedPerson = null;
+  }
+
+  closeModalOnBackgroundClick(event: MouseEvent): void {
+    if ((<HTMLElement>event.target).classList.contains('modal')) {
+      this.closeModal();
+    }
+  }
 
   ngOnInit() {
     this.people = [
