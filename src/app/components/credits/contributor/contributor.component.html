@@ -21,7 +21,7 @@
         <h2>{{ selectedPerson?.name }}</h2>
         <img *ngIf="selectedPersonImage" [src]="selectedPersonImage" alt="{{ selectedPerson?.name }}'s GitHub Profile Picture" />
         <p *ngIf="selectedPerson?.githubUrl">
-            <a [href]="selectedPerson.githubUrl" target="_blank">Visit GitHub Profile</a>
+            <a [href]="selectedPerson!.githubUrl" target="_blank">Visit GitHub Profile</a>
         </p>
     </div>
 </div>
