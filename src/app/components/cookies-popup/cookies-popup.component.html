@@ -20,15 +20,15 @@
             <input
                 type="text"
                 [(ngModel)]="userInput"
-                placeholder="Type 'I agree to sell my soul to the lord of the underworld'"
+                placeholder="Type 'I agree to sell my soul to Cthulhu'"
             />
             <button (click)="submitAgreement()">Submit</button>
         </div>
 
         <div><a href="#" (click)="rejectCookie()">Jeter le cookie :(</a></div>
-        <div *ngIf="showMsg">If you want to reject you have to click on the bucket</div>
+        <div *ngIf="showMsg">If you want to reject you have to click on the cookie</div>
 
     </div>
 </div>
-<div *ngIf="showRandomBucket" (click)="close()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
-'left': randomDivPosition.y + 'px'}">Bucket</div>
+<div *ngIf="showRandomBucket" (click)="moveRandomDiv()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
+'left': randomDivPosition.x + 'px'}"><canvas class="cookie" width="16" height="16"></canvas></div>

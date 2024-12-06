@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
+import * as dictionary from '../../../assets/text/dictonary.json';
 import { BackgroundComponent } from "../background/background.component";
+
+interface IDictionary {
+  [index: string]: string;  // Cela indique que vous pouvez utiliser n'importe quelle clé de type string
+}
 
 @Component({
   selector: 'app-homepage',
@@ -11,8 +16,9 @@ import { BackgroundComponent } from "../background/background.component";
   standalone: true,
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent{
- 
+
+export class HomepageComponent {
+  
 
 
   isModalOpen: boolean = false; 
@@ -22,6 +28,8 @@ export class HomepageComponent{
   };
 
   openModal(keyToDict:string) {
+    var example: IDictionary = dictionary
+    console.log(example[keyToDict]);
     console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
