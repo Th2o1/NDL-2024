@@ -1,16 +1,19 @@
 .hover-wrapper {
   display: inline-block;
-  text-align: center; /* Ensures the name aligns with the canvas */
+  text-align: center;
+  position: relative;
+  z-index: 9999;
+  top: -60vh;
 }
 
 .name {
   margin: 0;
-  font-size: 0.8rem; /* Adjust font size for clarity */
+  font-size: 0.8rem;
   text-align: center;
-  color: black; /* Set text color to be visible */
-  white-space: nowrap; /* Prevent text wrapping */
-  text-overflow: unset; /* Disable truncation */
-  margin-top: 4px; /* Add space between canvas and name */
+  color: black;
+  white-space: nowrap;
+  text-overflow: unset;
+  margin-top: 4px;
 }
 
 .hover-container {
