@@ -21,10 +21,13 @@ export class ContributorComponent implements OnInit {
   currentHoverFrame: number[] = []; // To track the current frame for each hover
   hoverPositions: { top: string, left: string }[] = []; // To store positions for each hover-wrapper
   isModalOpen = false;
-  selectedPerson: string | null = null;
+  selectedPerson: { name: string; githubUrl: string; } | null = null;
+  selectedPersonImage: string | null = null;
 
-  openModal(person: string): void {
+  openModal(person: { name: string; githubUrl: string }): void {
+    const githubUsername = person.githubUrl.split('/')[3]; // Extract username
     this.selectedPerson = person;
+    this.selectedPersonImage = this.selectedPerson.githubUrl + `.png`;
     this.isModalOpen = true;
   }
 
@@ -41,14 +44,14 @@ export class ContributorComponent implements OnInit {
 
   ngOnInit() {
     this.people = [
-      { name: 'Pierre', githubUrl: 'https://github.com/rageofpseudo/' },
-      { name: 'Théo', githubUrl: 'https://github.com/Th2o1/' },
-      { name: 'Jaenai', githubUrl: 'https://github.com/JAENAI/' },
-      { name: 'Lucian', githubUrl: 'https://github.com/lucianmocan/' },
-      { name: 'Constantin', githubUrl: 'https://github.com/Nethet/' },
-      { name: 'Audric', githubUrl: 'https://github.com/Didibogoss/' },
-      { name: 'Felix', githubUrl: 'https://github.com/HarrisFelix/' },
-      { name: 'Julien', githubUrl: 'https://github.com/JulienClavel2002/' },
+      { name: 'Pierre', githubUrl: 'https://github.com/rageofpseudo' },
+      { name: 'Théo', githubUrl: 'https://github.com/Th2o1' },
+      { name: 'Jaenai', githubUrl: 'https://github.com/JAENAI' },
+      { name: 'Lucian', githubUrl: 'https://github.com/lucianmocan' },
+      { name: 'Constantin', githubUrl: 'https://github.com/Nethet' },
+      { name: 'Audric', githubUrl: 'https://github.com/Didibogoss' },
+      { name: 'Felix', githubUrl: 'https://github.com/HarrisFelix' },
+      { name: 'Julien', githubUrl: 'https://github.com/JulienClavel2002' },
     ];
     this.hoverStates = Array(this.people.length).fill(false);
     this.hoverIntervals = Array(this.people.length).fill(null);

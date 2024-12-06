@@ -8,7 +8,7 @@
                 id="contributor-{{ i }}"
                 [style.background-image]="getPufferfishImage(i)"
                 class="pufferfish"
-                (click)="openModal(person.name)"
+                (click)="openModal(person)"
         ></canvas>
     </div>
     <p class="name">{{ person.name }}</p>
@@ -17,8 +17,11 @@
 <!-- Modal Window -->
 <div *ngIf="isModalOpen" class="modal" (click)="closeModalOnBackgroundClick($event)">
     <div class="modal-content">
-        <span class="close" (click)="closeModal()">×</span>
-        <h2>{{ selectedPerson }}</h2>
-        <p>Vous avez sélectionné {{ selectedPerson }}!</p>
+        <button class="close-button" (click)="closeModal()">×</button>
+        <h2>{{ selectedPerson?.name }}</h2>
+        <img *ngIf="selectedPersonImage" [src]="selectedPersonImage" alt="{{ selectedPerson?.name }}'s GitHub Profile Picture" />
+        <p *ngIf="selectedPerson?.githubUrl">
+            <a [href]="selectedPerson.githubUrl" target="_blank">Visit GitHub Profile</a>
+        </p>
     </div>
 </div>
