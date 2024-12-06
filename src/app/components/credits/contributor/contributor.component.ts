@@ -1,35 +1,89 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf, NgOptimizedImage, NgStyle } from "@angular/common";
+import {NgForOf, NgIf, NgOptimizedImage, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-contributor',
   imports: [
     NgOptimizedImage,
     NgForOf,
-    NgStyle
+    NgStyle,
+    NgIf
   ],
   templateUrl: './contributor.component.html',
   standalone: true,
   styleUrls: ['./contributor.component.scss']
 })
 export class ContributorComponent implements OnInit {
-  people: string[] = [];
+  people: { name: string; githubUrl: string; description: string }[] | undefined;
   colors: string[] = ['albinos', 'red', 'green', 'blue', 'purple', 'black', 'brown', 'fade'];
   hoverStates: boolean[] = [];
   hoverIntervals: any[] = []; // To store interval IDs for each item
   currentHoverFrame: number[] = []; // To track the current frame for each hover
   hoverPositions: { top: string, left: string }[] = []; // To store positions for each hover-wrapper
+  isModalOpen = false;
+  selectedPerson: { name: string; githubUrl: string; description: string } | null = null;
+  selectedPersonImage: string | null = null;
+
+  openModal(person: { name: string; githubUrl: string; description: string }): void {
+    const githubUsername = person.githubUrl.split('/')[3]; // Extract username
+    this.selectedPerson = person;
+    this.selectedPersonImage = this.selectedPerson.githubUrl + `.png`;
+    this.isModalOpen = true;
+  }
+
+  closeModal(): void {
+    this.isModalOpen = false;
+    this.selectedPerson = null;
+  }
+
+  closeModalOnBackgroundClick(event: MouseEvent): void {
+    if ((<HTMLElement>event.target).classList.contains('modal')) {
+      this.closeModal();
+    }
+  }
 
   ngOnInit() {
     this.people = [
-      'Pierre',
-      'Théo',
-      'Jaenai',
-      'Lucian',
-      'Constantin',
-      'Audric',
-      'Felix',
-      'Julien'
+      {
+        name: 'Pierre',
+        githubUrl: 'https://github.com/rageofpseudo',
+        description: 'Design and pixel art contributor.'
+      },
+      {
+        name: 'Théo',
+        githubUrl: 'https://github.com/Th2o1',
+        description: 'Team leader, design, and pixel art contributor.'
+      },
+      {
+        name: 'Jaenai',
+        githubUrl: 'https://github.com/JAENAI',
+        description: 'Animation contributor.'
+      },
+      {
+        name: 'Lucian',
+        githubUrl: 'https://github.com/lucianmocan',
+        description: 'Frontend developer and DevOps contributor.'
+      },
+      {
+        name: 'Constantin',
+        githubUrl: 'https://github.com/Nethet',
+        description: 'Contributor.' // No specific role mentioned
+      },
+      {
+        name: 'Audric',
+        githubUrl: 'https://github.com/Didibogoss',
+        description: 'Design and pixel art contributor.'
+      },
+      {
+        name: 'Felix',
+        githubUrl: 'https://github.com/HarrisFelix',
+        description: 'Frontend developer and DevOps contributor.'
+      },
+      {
+        name: 'Julien',
+        githubUrl: 'https://github.com/JulienClavel2002',
+        description: 'Design and pixel art contributor.'
+      },
     ];
     this.hoverStates = Array(this.people.length).fill(false);
     this.hoverIntervals = Array(this.people.length).fill(null);
