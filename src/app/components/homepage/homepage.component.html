@@ -2,8 +2,6 @@
     <app-background></app-background>
     <div class="homepage-rest">
         <div class="modal-main-container">
-            <button (click)="openModal('base')">Ouvrir la modale</button>
-        
             <!-- Modal Window -->
             <div *ngIf="isModalOpen" class="modal" [ngStyle]="modalStyles" (click)="closeModalOnBackgroundClick($event)">
               <div class="modal-content">
@@ -12,7 +10,14 @@
                 <p>Ceci est un exemple de fenêtre modale.</p>
               </div>
             </div>
-            <div class="content"><canvas (click)="openModal('test')"  class="kidneys" width="16" height="16"></canvas></div>
+            <div class="content">
+                <canvas (click)="openModal('kidneys')"  class="kidneys" width="16" height="16"></canvas>
+                <canvas (click)="openModal('eye')"  class="eye" width="16" height="16"></canvas>
+                <canvas (click)="openModal('hand')"  class="hand" width="16" height="16"></canvas>
+                <canvas (click)="openModal('hair')"  class="hair" width="32" height="32"></canvas>
+                <canvas (click)="openModal('bone')"  class="bone" width="16" height="16"></canvas>
+                <canvas (click)="openModal('stomach')"  class="stomach" width="16" height="16"></canvas>
+            </div>
         </div>
     </div>
     
