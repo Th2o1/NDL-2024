@@ -20,14 +20,14 @@
             <input
                 type="text"
                 [(ngModel)]="userInput"
-                placeholder="Type 'I agree to sell my soul to Cthulhu'"
+                placeholder="Ecris 'J'accepte tous les cookies et leurs conséquences'"
             />
-            <button (click)="submitAgreement()">Submit</button>
+            <button (click)="submitAgreement()">Soumission</button>
         </div>
 
         <div><a href="#" (click)="rejectCookie()">Jeter le cookie :(</a></div>
-        <div *ngIf="showMsg">If you want to reject you have to click on the cookie</div>
-
+        <div *ngIf="showMsg">si tu veux jeter les cookies tu dois les jeter plus vite que ta grand mère les fait. Elle est très rapide je te conseille d'abandonner.</div>
+        <div *ngIf="showMsg">tu as jeté {{ cookieCounta }} cookies sur 5</div>
     </div>
 </div>
 <div *ngIf="showRandomBucket" (click)="moveRandomDiv()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
