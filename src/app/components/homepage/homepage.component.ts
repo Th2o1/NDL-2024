@@ -5,6 +5,10 @@ import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component"
 import * as dictionary from '../../../assets/text/dictonary.json';
 import { BackgroundComponent } from "../background/background.component";
 
+interface IDictionary {
+  [index: string]: string;  // Cela indique que vous pouvez utiliser n'importe quelle clé de type string
+}
+
 @Component({
   selector: 'app-homepage',
   imports: [NavBarComponent, CookiesPopupComponent, CommonModule, BackgroundComponent],
@@ -12,8 +16,9 @@ import { BackgroundComponent } from "../background/background.component";
   standalone: true,
   styleUrl: './homepage.component.scss'
 })
+
 export class HomepageComponent {
- 
+  
 
   isModalOpen: boolean = false; 
   modalStyles = {
@@ -22,7 +27,8 @@ export class HomepageComponent {
   };
 
   openModal(keyToDict:string) {
-    const any = dictionary;
+    var example: IDictionary = dictionary
+    console.log(example[keyToDict]);
     console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
