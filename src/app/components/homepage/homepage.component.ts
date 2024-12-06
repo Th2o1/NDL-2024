@@ -25,16 +25,26 @@ export class HomepageComponent {
     this.positionCanvasesRandomly();  
   }
 
-  // Fonction pour positionner les canvas de manière aléatoire
   positionCanvasesRandomly(): void {
-    const canvases = document.querySelectorAll('.canvas') as NodeListOf<HTMLElement>;
-    const contentWidth = document.querySelector('.content')?.clientWidth || 0;
-    const contentHeight = document.querySelector('.content')?.clientHeight || 0;
-    console.log(canvases);
+    const canvases = document.querySelectorAll('.bodypart') as NodeListOf<HTMLElement>;
+    const viewportWidth = window.innerWidth;
+    const placedPositions: { x: number; y: number; width: number; height: number }[] = [];
+  
     canvases.forEach(canvas => {
-      const randomX = Math.random() * (contentWidth - canvas.clientWidth);
-      const randomY = Math.random() * (contentHeight - canvas.clientHeight);
-
+      let isOverlapping: boolean;
+      let randomX: number, randomY: number;
+  
+  
+      
+        // Génère des positions aléatoires en vw et vh
+        randomX = Math.random() * (600 - 300) + 300;
+        randomY = (Math.random() * 500) - 200;
+        // Vérifie si la position se chevauche avec d'autres
+        
+  
+      // Enregistre la position
+  
+      // Applique la position en vh/vw
       canvas.style.left = `${randomX}px`;
       canvas.style.top = `${randomY}px`;
     });
