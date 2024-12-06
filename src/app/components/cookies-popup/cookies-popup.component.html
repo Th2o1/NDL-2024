@@ -26,9 +26,9 @@
         </div>
 
         <div><a href="#" (click)="rejectCookie()">Jeter le cookie :(</a></div>
-        <div *ngIf="showMsg">If you want to reject you have to click on the bucket</div>
+        <div *ngIf="showMsg">If you want to reject you have to click on the cookie</div>
 
     </div>
 </div>
 <div *ngIf="showRandomBucket" (click)="moveRandomDiv()" class="random-div" [ngStyle]="{'top': randomDivPosition.y + 'px',
-'left': randomDivPosition.x + 'px'}"><img src="" alt=""></div>
+'left': randomDivPosition.x + 'px'}"><canvas class="cookie" width="16" height="16"></canvas></div>

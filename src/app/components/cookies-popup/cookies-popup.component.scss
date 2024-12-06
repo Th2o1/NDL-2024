@@ -29,7 +29,16 @@ div {
     top: 0;
     left: 0;
     position: absolute;
-    background-color: red;
     z-index: 9999;
+    canvas.cookie {
+        width: 200%;
+        height: 200%;
+        image-rendering: pixelated;
+        background-image: url("../../../assets/cookies/cookie_16x16.png");
+        background-size: cover;
+        position: relative; 
+    }
   }
+
+
   
