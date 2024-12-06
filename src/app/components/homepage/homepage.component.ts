@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
 import * as dictionary from '../../../assets/text/dictonary.json';
 import { BackgroundComponent } from "../background/background.component";
@@ -11,7 +10,7 @@ interface IDictionary {
 
 @Component({
   selector: 'app-homepage',
-  imports: [NavBarComponent, CookiesPopupComponent, CommonModule, BackgroundComponent],
+  imports: [CommonModule, BackgroundComponent, CookiesPopupComponent],
   templateUrl: './homepage.component.html',
   standalone: true,
   styleUrl: './homepage.component.scss'
@@ -19,6 +18,7 @@ interface IDictionary {
 
 export class HomepageComponent {
   
+
 
   isModalOpen: boolean = false; 
   modalStyles = {

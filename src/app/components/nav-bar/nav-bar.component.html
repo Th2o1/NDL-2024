@@ -1,11 +1,14 @@
-<div>
-    <div>
-        <a [routerLink]="['/']" 
-        routerLinkActive="router-link-active" 
-        [routerLinkActiveOptions]="{exact: true}">
-        Accueil</a></div>
-    <div><a [routerLink]="['/credits']" 
-        routerLinkActive="router-link-active"
-        [routerLinkActiveOptions]="{exact: true}">
-        Crédits</a></div>
+<div class="main-nav">
+    <div class="main-menus">
+        <div>
+            <a [routerLink]="['/']" 
+            routerLinkActive="router-link-active" 
+            [routerLinkActiveOptions]="{exact: true}">
+            Accueil</a></div>
+        <div><a [routerLink]="['/credits']" 
+            routerLinkActive="router-link-active"
+            [routerLinkActiveOptions]="{exact: true}">
+            Crédits</a></div>
+    </div>
+    <div class="ocean-sounds"><a (click)="playOceanSounds()">Play ocean sounds</a></div>
 </div>
