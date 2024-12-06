@@ -99,8 +99,8 @@ export class ContributorComponent implements OnInit {
     let newPos;
 
     do {
-      const top = `-${20 + Math.random() * 50}vh`; // Random top position between -10vh and -50vh
-      const left = `${Math.random() * 50}vw`; // Random left position between 0vw and 80vw
+      const top = `-${20 + Math.random() * 40}vh`; // Random top position between -10vh and -50vh
+      const left = `${Math.random() * 40}vw`; // Random left position between 0vw and 80vw
       newPos = { top, left };
 
       if (this.isPositionValid(newPos)) {
