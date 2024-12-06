@@ -20,9 +20,13 @@ export class HomepageComponent {
     'transition': 'opacity 0.3s ease' 
   };
 
-  openModal() {
+  openModal(keyToDict:string) {
+    console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
+    if(keyToDict == "test"){
+      console.log("1")
+    }
   }
 
   closeModal() {

@@ -57,6 +57,6 @@ export class ContributorComponent implements OnInit {
     const basePath = "../../../../assets/credits/";
     const frame = this.hoverStates[index] ? this.currentHoverFrame[index] : 1; // Use current frame if hovering, else default to 1
     const image = `${basePath}pufferfish_${color}_${frame}_64x64.png`;
-    return `url("${image}") center`;
+    return `url("${image}")`;
   }
 }
