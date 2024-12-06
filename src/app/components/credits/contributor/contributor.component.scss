@@ -1,0 +1,47 @@
+.hover-wrapper {
+  display: inline-block;
+  text-align: center; /* Ensures the name aligns with the canvas */
+}
+
+.name {
+  margin: 0;
+  font-size: 0.8rem; /* Adjust font size for clarity */
+  text-align: center;
+  color: black; /* Set text color to be visible */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-overflow: unset; /* Disable truncation */
+  margin-top: 4px; /* Add space between canvas and name */
+}
+
+.hover-container {
+  position: relative;
+  width: 64px; /* Adjust as needed */
+  height: 64px; /* Adjust as needed */
+  overflow: visible;
+}
+
+.pufferfish {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  background-size: auto 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hover-container:hover .overlay {
+  opacity: 1;
+}

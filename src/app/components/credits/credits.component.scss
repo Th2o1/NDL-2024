@@ -4,6 +4,12 @@ div {
     background-image: url("../../../assets/nuit_de_linfo.png");
     background-size: cover;
     position: relative; /* Add this line */
+    .content {
+        position: relative; /* Add this line */
+        app-contributor {
+            position: absolute;
+        }
+    }
 }
 
 app-nav-bar {
@@ -13,3 +19,4 @@ app-nav-bar {
     right: 0;
     z-index: 1; /* Add this line */
 }
+
