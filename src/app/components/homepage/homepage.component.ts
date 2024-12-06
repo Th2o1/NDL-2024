@@ -21,6 +21,7 @@ export class HomepageComponent {
   };
 
   openModal(keyToDict:string) {
+    console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
     if(keyToDict == "test"){

@@ -19,7 +19,7 @@
     </div>
     <div class="homepage-rest">
         <div class="modal-main-container">
-            <button (click)="openModal()">Ouvrir la modale</button>
+            <button (click)="openModal(base)">Ouvrir la modale</button>
         
             <!-- Modal Window -->
             <div *ngIf="isModalOpen" class="modal" [ngStyle]="modalStyles" (click)="closeModalOnBackgroundClick($event)">
