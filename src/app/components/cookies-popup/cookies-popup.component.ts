@@ -17,6 +17,7 @@ export class CookiesPopupComponent {
   randomDivPosition = { x: 0, y: 0 };
   userInput: string = ''; // Stores user input
   cookieCounta = 0;
+  firstClickTime = 0
 
   acceptCookie() {
     this.showInput = true;
@@ -24,14 +25,14 @@ export class CookiesPopupComponent {
 
   // Validate the user input when they submit
   submitAgreement() {
-    if (this.userInput.trim().toLowerCase() === 'i agree to sell my soul to cthulhu') {
+    if (this.userInput.trim().toLowerCase() === "j'accepte tous les cookies et leurs conséquences") {
       console.log('makonga:', this.userInput);
       this.showCookies = false;
       if (this.showRandomBucket){
         this.showRandomBucket = false;
       }
     } else {
-      alert('Vous devez taper "I agree to sell my soul to Cthulhu" pour continuer.');
+      alert('Vous devez taper "J\'accepte tous les cookies et leurs conséquences"');
       console.log('Incorrect input:', this.userInput);
     }
   }
@@ -39,36 +40,46 @@ export class CookiesPopupComponent {
   rejectCookie() {
     console.log('Cookie rejected!');
     this.showMsg = true;
-    this.moveRandomDiv();
+    this.showRand();
+    this.cookieCounta=0;
     // Implement your logic for rejecting cookies here
     // alert('Dommage, pas de cookies pour vous !');
   }
 
   moveRandomDiv() {
-    if (this.cookieCounta < 5) {
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      console.log(viewportWidth);
-      console.log(viewportHeight);
-      // Generate random positions within the viewport
-      const randomX = Math.random() * (viewportWidth - 100); 
-      const randomY = Math.random() * (viewportHeight -100);
-      console.log(Math.random());
-      console.log(Math.random());
+    if(this.cookieCounta === 0) {
+      this.firstClickTime = Date.now();
+      this.showRand();
+      return;
+    }
 
-      // Update the randomDivPosition with the new random position
-      this.randomDivPosition = { x: randomX, y: randomY };
-      console.log(randomX);
-      console.log(randomY);
-      this.showRandomBucket = true; // Show the div after it gets a position
-      this.cookieCounta++;
+    if(Date.now()-this.firstClickTime >= 5000) {
+      this.firstClickTime = Date.now();
+      this.cookieCounta = 0;
+      this.showRand();
+      return;
+    }
+
+    if (this.cookieCounta < 4) {
+      this.showRand();
     } else {
       this.close();
     }
-
-
+      
   }
 
+  showRand() {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    // Generate random positions within the viewport
+    const randomX = Math.random() * (viewportWidth - 100); 
+    const randomY = Math.random() * (viewportHeight -100);
+
+    // Update the randomDivPosition with the new random position
+    this.randomDivPosition = { x: randomX, y: randomY };
+    this.showRandomBucket = true; // Show the div after it gets a position
+    this.cookieCounta++;
+  }
   close() {
     this.showCookies = false;
     this.showRandomBucket = false;

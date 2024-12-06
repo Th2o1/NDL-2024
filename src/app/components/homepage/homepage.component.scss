@@ -22,6 +22,55 @@ div.homepage-rest {
     height: 100px;
     background-image: url("../../../assets/bodypart/kidney_16x16.png");
 }
+.eye{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/eye.png");
+}
+.hand{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/hand_16x16.png");
+}
+.hair{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/gokuHair_32x32.png");
+}
+.bone{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/os_16x16.png");
+}
+.stomach{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/stomach_16x16.png");
+}
+.heart{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 160px;
+    height: 160px;
+    background-image: url("../../../assets/bodypart/Heart_16x16.png");
+}
+.lungs{
+    image-rendering: pixelated;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../../assets/bodypart/Lungs_16x16.png");
+}
 
 
 /* Le fond de la modale */
