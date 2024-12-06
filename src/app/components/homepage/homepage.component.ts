@@ -3,16 +3,16 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
 import * as dictionary from './dictionary.json';
+import { BackgroundComponent } from "../background/background.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [NavBarComponent, CookiesPopupComponent, CommonModule],
+  imports: [NavBarComponent, CookiesPopupComponent, CommonModule, BackgroundComponent],
   templateUrl: './homepage.component.html',
   standalone: true,
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
-  scales = [1, 2, 3, 4, 5];
  
 
   isModalOpen: boolean = false; 

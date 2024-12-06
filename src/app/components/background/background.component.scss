@@ -1,0 +1,89 @@
+div.homepage-main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    div.homepage-top {
+        height: 100%;
+        background-color: #92e4f2;
+        z-index: 1;
+        app-nav-bar {
+            display: block;
+            position: absolute;
+            margin: 1.5rem;
+            right: 0;
+            z-index: 1; /* Add this line */
+        }
+        div.sun {
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -28rem;
+            canvas.sun {
+                width: 50%;
+                height: 50%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/sun_64x64.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.vague_dark_blue {
+            display: flex;
+            margin-top: -7.5rem;
+            canvas.vague_dark_blue {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/vague_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.vague_light_blue {
+            display: flex;
+            margin-top: -7.5rem;
+            canvas.vague_light_blue {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/vague_lighten_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }        
+        div.horizon {
+            display: flex;
+            margin-top: -27rem;
+            canvas.horizon {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/horizon_32x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
+        div.horizon_light {
+            display: flex;
+            background-image: #1860C3;
+            margin-top: 18rem;
+            canvas.horizon_light {
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/horizon_lighten_32x16.png");
+                background-size: cover;
+                // transform: rotate(180deg);
+                position: relative; 
+            }
+        }
+    }
+    div.homepage-rest {
+        z-index: 6;
+        background-color: #1860C3;
+        width: 100%;
+        height: 100%;
+    }
+}
