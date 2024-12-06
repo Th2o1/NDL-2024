@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
+import * as dictionary from 'dictionary.json';
 
 @Component({
   selector: 'app-homepage',
@@ -21,6 +22,7 @@ export class HomepageComponent {
   };
 
   openModal(keyToDict:string) {
+    const any = dictionary;
     console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
