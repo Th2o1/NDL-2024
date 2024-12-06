@@ -5,7 +5,11 @@ import * as dictionary from '../../../assets/text/dictonary.json';
 import { BackgroundComponent } from "../background/background.component";
 
 interface IDictionary {
-  [index: string]: string;  // Cela indique que vous pouvez utiliser n'importe quelle clé de type string
+  [index: string]: {
+    name: string;
+    corps: string;
+    ocean: string;
+  };  // Cela indique que vous pouvez utiliser n'importe quelle clé de type string
 }
 
 @Component({
@@ -46,7 +50,9 @@ export class HomepageComponent {
     });
   }
 
-
+  modal_title = "test";
+  modal_content_human = "test";
+  modal_content_ocean = "test";
   isModalOpen: boolean = false; 
   modalStyles = {
     'opacity': '1',
@@ -59,9 +65,9 @@ export class HomepageComponent {
     console.log(keyToDict)
     this.isModalOpen = true; 
     this.modalStyles['opacity'] = '1'; 
-    if(keyToDict == "test"){
-      console.log("1")
-    }
+    this.modal_title = example[keyToDict].name;
+    this.modal_content_human = example[keyToDict].corps;
+    this.modal_content_ocean = example[keyToDict].ocean;
   }
 
   closeModal() {

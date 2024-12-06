@@ -23,5 +23,6 @@
         <p *ngIf="selectedPerson?.githubUrl">
             <a [href]="selectedPerson!.githubUrl" target="_blank">Visit GitHub Profile</a>
         </p>
+        <p *ngIf="selectedPerson?.description">{{ selectedPerson?.description }}</p>
     </div>
 </div>
