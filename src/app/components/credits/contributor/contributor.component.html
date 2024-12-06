@@ -1,4 +1,6 @@
-<div *ngFor="let person of people; let i = index" class="hover-wrapper">
+<div *ngFor="let person of people; let i = index"
+     class="hover-wrapper"
+     [ngStyle]="{ top: hoverPositions[i].top, left: hoverPositions[i].left }">
     <div class="hover-container"
          (mouseenter)="setHoverState(i, true)"
          (mouseleave)="setHoverState(i, false)">
@@ -7,7 +9,6 @@
                 [style.background-image]="getPufferfishImage(i)"
                 class="pufferfish"
         ></canvas>
-
     </div>
     <p class="name">{{ person }}</p>
 </div>

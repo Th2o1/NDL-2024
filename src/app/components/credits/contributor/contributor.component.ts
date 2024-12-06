@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf, NgOptimizedImage } from "@angular/common";
+import { NgForOf, NgOptimizedImage, NgStyle } from "@angular/common";
 
 @Component({
   selector: 'app-contributor',
   imports: [
     NgOptimizedImage,
-    NgForOf
+    NgForOf,
+    NgStyle
   ],
   templateUrl: './contributor.component.html',
   standalone: true,
-  styleUrl: './contributor.component.scss'
+  styleUrls: ['./contributor.component.scss']
 })
 export class ContributorComponent implements OnInit {
   people: string[] = [];
@@ -17,6 +18,7 @@ export class ContributorComponent implements OnInit {
   hoverStates: boolean[] = [];
   hoverIntervals: any[] = []; // To store interval IDs for each item
   currentHoverFrame: number[] = []; // To track the current frame for each hover
+  hoverPositions: { top: string, left: string }[] = []; // To store positions for each hover-wrapper
 
   ngOnInit() {
     this.people = [
@@ -32,6 +34,49 @@ export class ContributorComponent implements OnInit {
     this.hoverStates = Array(this.people.length).fill(false);
     this.hoverIntervals = Array(this.people.length).fill(null);
     this.currentHoverFrame = Array(this.people.length).fill(1); // Start with frame 1
+
+    // Initialize default positions
+    this.hoverPositions = this.people.map(() => this.generateUniquePosition());
+  }
+
+  generateUniquePosition(): { top: string, left: string } {
+    const maxAttempts = 100;
+    let attempt = 0;
+    let newPos;
+
+    do {
+      const top = `-${20 + Math.random() * 50}vh`; // Random top position between -10vh and -50vh
+      const left = `${Math.random() * 50}vw`; // Random left position between 0vw and 80vw
+      newPos = { top, left };
+
+      if (this.isPositionValid(newPos)) {
+        return newPos;
+      }
+
+      attempt++;
+    } while (attempt < maxAttempts);
+
+    console.warn("Could not generate a unique position after multiple attempts.");
+    return newPos; // Return the last attempted position
+  }
+
+  isPositionValid(newPos: { top: string, left: string }): boolean {
+    const threshold = 60; // Minimum distance threshold in vh/vw
+    const newTop = parseFloat(newPos.top);
+    const newLeft = parseFloat(newPos.left);
+
+    return this.hoverPositions.every(pos => {
+      if (!pos) return true; // Skip uninitialized positions
+      const existingTop = parseFloat(pos.top);
+      const existingLeft = parseFloat(pos.left);
+
+      // Calculate Euclidean distance between positions
+      const distance = Math.sqrt(
+          Math.pow(newTop - existingTop, 2) + Math.pow(newLeft - existingLeft, 2)
+      );
+
+      return distance > threshold;
+    });
   }
 
   setHoverState(index: number, isHovering: boolean): void {
@@ -58,5 +103,15 @@ export class ContributorComponent implements OnInit {
     const frame = this.hoverStates[index] ? this.currentHoverFrame[index] : 1; // Use current frame if hovering, else default to 1
     const image = `${basePath}pufferfish_${color}_${frame}_64x64.png`;
     return `url("${image}")`;
+  }
+
+  updatePosition(index: number, top: string, left: string): void {
+    const newPos = { top, left };
+
+    if (this.isPositionValid(newPos)) {
+      this.hoverPositions[index] = newPos;
+    } else {
+      console.warn("New position overlaps or is too close, skipping update.");
+    }
   }
 }
