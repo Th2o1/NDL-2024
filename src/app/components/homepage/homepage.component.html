@@ -1,7 +1,16 @@
 <div class="main">
     <app-nav-bar></app-nav-bar>
-    <div id="modular-window">JE SUIS LA DIV OK</div>
-    <canvas (click)="test()" class="sun" width="128" height="128"></canvas>
+    <canvas  class="sun" width="128" height="128"></canvas>
+    <button (click)="openModal()">Ouvrir la modale</button>
+
+    <!-- Modal Window -->
+    <div *ngIf="isModalOpen" class="modal" [ngStyle]="modalStyles" (click)="closeModalOnBackgroundClick($event)">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">×</span>
+        <h2>Bienvenue dans la modale</h2>
+        <p>Ceci est un exemple de fenêtre modale.</p>
+      </div>
+    </div>
     <div class="content">CECI est un test</div>
 </div>
 
