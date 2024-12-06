@@ -4,12 +4,21 @@ div {
     background-image: url("../../../assets/nuit_de_linfo.png");
     background-size: cover;
     position: relative; /* Add this line */
+
+    app-nav-bar {
+        display: block;
+        position: absolute;
+        margin: 1.5rem;
+        right: 0;
+        z-index: 1; /* Add this line */
+    }
+    
+    app-cookies-popup {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1; /* Add this line */
+    }
 }
 
-app-nav-bar {
-    display: block;
-    position: absolute;
-    margin: 1.5rem;
-    right: 0;
-    z-index: 1; /* Add this line */
-}

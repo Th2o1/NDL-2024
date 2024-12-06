@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
+import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [NavBarComponent],
+  imports: [NavBarComponent, CookiesPopupComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
