@@ -13,7 +13,7 @@ import { NgForOf, NgOptimizedImage, NgStyle } from "@angular/common";
   styleUrls: ['./contributor.component.scss']
 })
 export class ContributorComponent implements OnInit {
-  people: string[] = [];
+  people: { name: string; githubUrl: string; }[] | undefined;
   colors: string[] = ['albinos', 'red', 'green', 'blue', 'purple', 'black', 'brown', 'fade'];
   hoverStates: boolean[] = [];
   hoverIntervals: any[] = []; // To store interval IDs for each item
@@ -22,14 +22,14 @@ export class ContributorComponent implements OnInit {
 
   ngOnInit() {
     this.people = [
-      'Pierre',
-      'Théo',
-      'Jaenai',
-      'Lucian',
-      'Constantin',
-      'Audric',
-      'Felix',
-      'Julien'
+      { name: 'Pierre', githubUrl: 'https://github.com/rageofpseudo/' },
+      { name: 'Théo', githubUrl: 'https://github.com/Th2o1/' },
+      { name: 'Jaenai', githubUrl: 'https://github.com/JAENAI/' },
+      { name: 'Lucian', githubUrl: 'https://github.com/lucianmocan/' },
+      { name: 'Constantin', githubUrl: 'https://github.com/Nethet/' },
+      { name: 'Audric', githubUrl: 'https://github.com/Didibogoss/' },
+      { name: 'Felix', githubUrl: 'https://github.com/HarrisFelix/' },
+      { name: 'Julien', githubUrl: 'https://github.com/JulienClavel2002/' },
     ];
     this.hoverStates = Array(this.people.length).fill(false);
     this.hoverIntervals = Array(this.people.length).fill(null);
