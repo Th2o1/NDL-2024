@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from "@components/nav-bar/nav-bar.component";
 import { CookiesPopupComponent } from "../cookies-popup/cookies-popup.component";
@@ -6,13 +6,14 @@ import { BackgroundComponent } from "../background/background.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [NavBarComponent, CookiesPopupComponent, CommonModule, BackgroundComponent],
+  imports: [CommonModule, BackgroundComponent],
   templateUrl: './homepage.component.html',
   standalone: true,
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {
+export class HomepageComponent{
  
+
 
   isModalOpen: boolean = false; 
   modalStyles = {

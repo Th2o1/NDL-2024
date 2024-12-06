@@ -1,6 +1,12 @@
-div {
+div.main-nav {
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
+
+    div.main-menus {
+        display: flex;
+        gap: 1.5rem;
+    }
 
     a {
         text-decoration: none;

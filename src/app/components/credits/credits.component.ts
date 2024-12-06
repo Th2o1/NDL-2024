@@ -5,7 +5,7 @@ import { BackgroundComponent } from "../background/background.component";
 
 @Component({
   selector: 'app-credits',
-  imports: [NavBarComponent, ContributorComponent, BackgroundComponent],
+  imports: [ContributorComponent, BackgroundComponent],
   templateUrl: './credits.component.html',
   standalone: true,
   styleUrl: './credits.component.scss'

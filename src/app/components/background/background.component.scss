@@ -79,6 +79,21 @@ div.homepage-main {
                 position: relative; 
             }
         }
+        div.ponton {
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 6;
+            margin-top: 8.5rem;
+            canvas.ponton {
+                width: 15%;
+                height: 15%;
+                image-rendering: pixelated;
+                background-image: url("../../../assets/main/ponton_16x16.png");
+                background-size: cover;
+                position: relative; 
+            }
+        }
     }
     div.homepage-rest {
         z-index: 6;
