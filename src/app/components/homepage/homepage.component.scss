@@ -6,11 +6,14 @@ div.homepage-rest {
     height: 100%;
 }
 
-
+.bodypart{
+    position: relative;
+}
 
 .content{
+    z-index: 100;
     width: 100%;
-    height: 10000px;
+    height: 500px;
     background: linear-gradient(to bottom, #1860C3, #124c9c, #0c3875, #08254e, #041226);
 }
 
